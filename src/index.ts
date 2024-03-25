@@ -23,3 +23,9 @@ let numbers: number[] = []; // declare an empty number array
 numbers[0] = 1;
 numbers[1] = 3;
 numbers.forEach(n => console.log(n * 0.61));
+
+
+// tuples 
+// these are fixed size arrays with well defined data types
+
+let array: [number, string] = [1, 'Pete'];

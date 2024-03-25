@@ -5,4 +5,5 @@ var numbers = [];
 numbers[0] = 1;
 numbers[1] = 3;
 numbers.forEach(function (n) { return console.log(n * 0.61); });
+var array = [1, 'Pete'];
 //# sourceMappingURL=index.js.map
