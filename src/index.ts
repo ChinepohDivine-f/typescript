@@ -15,3 +15,11 @@ console.log(sales);
 // never
 // enum
 // tuple
+
+
+// arrays in ts
+
+let numbers: number[] = []; // declare an empty number array
+numbers[0] = 1;
+numbers[1] = 3;
+numbers.forEach(n => console.log(n * 0.61));
