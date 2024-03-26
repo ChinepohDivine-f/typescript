@@ -128,4 +128,56 @@ let textBox: UIWidget = {
   drag: () => {}, // from the drag
   resize: () => {}, // from the resive type
 };
- 
+
+/// literal types
+// with this we can create varaible which are like constants
+// and can only be set to the target
+
+let quantity: 50 = 50; // can only be set to 50
+
+// applying the union operator we can make the code even better
+
+let anotherQuantity: 50 | 100 = 100; // it can be either 50 or 100
+
+// create a quantity type to simplify things
+type Quantity = 50 | 100; // can either be 50 or 100
+
+let numberOfBooks: Quantity = 100; // a literal type
+
+// literals can also be strings
+
+type measurements = "m" | "cm";
+
+let width: measurements = "cm";
+console.log(width);
+
+// nullable variables
+
+function greet(name: string | null) {
+  if (name) console.log("Hello " + name);
+  else console.log("Hello!");
+}
+
+greet("Chinepoh");
+greet(null);
+
+// optional chaining
+
+type Customer = {
+  birthday: Date;
+};
+
+function getCustomer(id: number): Customer | null | undefined {
+  return id === 0 ? null : { birthday: new Date() };
+}
+
+let customer = getCustomer(1);
+// optional property access operator
+console.log(customer?.birthday.getFullYear());
+
+// optional element access operator
+// customers?.[0]
+
+// optional call
+let log: any = null;
+log?.("a"); // executed only when log is referencing an actual function

@@ -22,4 +22,44 @@ var employee = {
 };
 employee.work = "UI UX designer";
 console.log(employee);
+var anotherEmployee = {
+    id: 2,
+    name: "Peter",
+    work: "Gardener",
+    retire: function (date) {
+        console.log(date);
+    },
+};
+function kgToLbs(wieght) {
+    if (typeof wieght === "number")
+        return wieght * 2.2;
+    else
+        return parseInt(wieght) * 2.2;
+}
+kgToLbs(10);
+kgToLbs("10");
+var textBox = {
+    drag: function () { },
+    resize: function () { },
+};
+var quantity = 50;
+var anotherQuantity = 100;
+var numberOfBooks = 100;
+var width = "cm";
+console.log(width);
+function greet(name) {
+    if (name)
+        console.log("Hello " + name);
+    else
+        console.log("Hello!");
+}
+greet("Chinepoh");
+greet(null);
+function getCustomer(id) {
+    return id === 0 ? null : { birthday: new Date() };
+}
+var customer = getCustomer(1);
+console.log(customer === null || customer === void 0 ? void 0 : customer.birthday.getFullYear());
+var log = null;
+log === null || log === void 0 ? void 0 : log("a");
 //# sourceMappingURL=index.js.map
