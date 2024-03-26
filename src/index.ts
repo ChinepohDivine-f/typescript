@@ -96,19 +96,36 @@ let anotherEmployee: Employee = {
 
 /// union types
 
-function kgToLbs(wieght: number | string): number { // union type
-    // Narrowing
-    if (typeof wieght === 'number')
-        return wieght * 2.2;
-    else
-        return parseInt(wieght) * 2.2
+function kgToLbs(wieght: number | string): number {
+  // union type
+  // Narrowing
+  if (typeof wieght === "number") return wieght * 2.2;
+  else return parseInt(wieght) * 2.2;
 }
 
-// with the union type its good to check if argument is a number or a string 
+// with the union type its good to check if argument is a number or a string
 // so as to perform the right options
 
 kgToLbs(10);
-kgToLbs('10');
+kgToLbs("10");
 
+// type intersection
+// with this we can asign two or more types to objects
 
+// consider the example below
 
+type Draggable = {
+  drag: () => void;
+};
+
+type Resizable = {
+  resize: () => void;
+};
+
+type UIWidget = Draggable & Resizable; // type anotation
+
+let textBox: UIWidget = {
+  drag: () => {}, // from the drag
+  resize: () => {}, // from the resive type
+};
+ 
