@@ -193,3 +193,20 @@ let ride = {
   // falsy (undefined, null, '', false, 0)
   speed: speed ?? 30, // if speed is not null or undefined, use the speed or else use the defual value: 30
 };
+
+
+
+
+
+// type assettion
+
+let phone = document.getElementById('phone') as HTMLInputElement; // assert the the HTMLInputElement
+// HTMLElement
+// HTMLInputElement
+phone.value; // the phone object can now acces the properties of HTMLInputElement
+
+
+// there is not type convention when using the as keyword in ts 
+
+let anotherPhone = <HTMLInputElement>document.getElementById('tablet'); // same as using the as keyword
+anotherPhone.value; 
