@@ -69,5 +69,27 @@ let employee: {
 
 employee.work = "UI UX designer";
 
-
 console.log(employee);
+
+///
+// type aliases
+
+// we can declare our custome types in
+//     ts which will make code cleaner and follow
+//  the DRY principle
+
+type Employee = {
+  readonly id: number;
+  name: string;
+  work: string;
+  retire: (date: Date) => void;
+};
+
+let anotherEmployee: Employee = {
+  id: 2,
+  name: "Peter",
+  work: "Gardener",
+  retire: (date: Date) => {
+    console.log(date);
+  },
+};
