@@ -11,5 +11,15 @@ console.log(mySize);
 function puppy(puppyName) {
     return "Hello Mr " + puppyName;
 }
-console.log(puppy('Snuckles'));
+console.log(puppy("Snuckles"));
+var employee = {
+    id: 1,
+    name: "Paul",
+    work: "",
+    retire: function (date) {
+        console.log(date);
+    },
+};
+employee.work = "UI UX designer";
+console.log(employee);
 //# sourceMappingURL=index.js.map

@@ -47,4 +47,27 @@ function puppy(puppyName: string): string {
   return "Hello Mr " + puppyName;
 }
 
-console.log(puppy('Snuckles'));
+console.log(puppy("Snuckles"));
+
+// objects in ts
+
+let employee: {
+  readonly id: number; // prevents us from modifying the id
+  name: string;
+  work: string;
+  retire: (date: Date) => void;
+} = {
+  id: 1,
+  name: "Paul",
+  work: "", // when defined we can asign an empty string
+  retire: (date: Date) => {
+    console.log(date);
+  },
+};
+
+// its not advisable to use null
+
+employee.work = "UI UX designer";
+
+
+console.log(employee);
