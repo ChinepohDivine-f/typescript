@@ -198,7 +198,7 @@ let ride = {
 
 
 
-// type assettion
+// type assertion
 
 let phone = document.getElementById('phone') as HTMLInputElement; // assert the the HTMLInputElement
 // HTMLElement
