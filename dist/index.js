@@ -62,4 +62,16 @@ var customer = getCustomer(1);
 console.log(customer === null || customer === void 0 ? void 0 : customer.birthday.getFullYear());
 var log = null;
 log === null || log === void 0 ? void 0 : log("a");
+var speed = null;
+var ride = {
+    speed: speed !== null && speed !== void 0 ? speed : 30,
+};
+var phone = document.getElementById('phone');
+phone.value;
+var anotherPhone = document.getElementById('tablet');
+anotherPhone.value;
+function render(document) {
+    if (typeof document === 'string')
+        document.toUpperCase();
+}
 //# sourceMappingURL=index.js.map

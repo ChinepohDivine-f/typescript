@@ -182,10 +182,6 @@ console.log(customer?.birthday.getFullYear());
 let log: any = null;
 log?.("a"); // executed only when log is referencing an actual function
 
-
-
-
-
 // the nullish coaelscing operator
 
 let speed: number | null = null;
@@ -194,19 +190,46 @@ let ride = {
   speed: speed ?? 30, // if speed is not null or undefined, use the speed or else use the defual value: 30
 };
 
-
-
-
-
 // type assertion
 
-let phone = document.getElementById('phone') as HTMLInputElement; // assert the the HTMLInputElement
+let phone = document.getElementById("phone") as HTMLInputElement; // assert the the HTMLInputElement
 // HTMLElement
 // HTMLInputElement
 phone.value; // the phone object can now acces the properties of HTMLInputElement
 
+// there is not type convention when using the as keyword in ts
 
-// there is not type convention when using the as keyword in ts 
+let anotherPhone = <HTMLInputElement>document.getElementById("tablet"); // same as using the as keyword
+anotherPhone.value;
 
-let anotherPhone = <HTMLInputElement>document.getElementById('tablet'); // same as using the as keyword
-anotherPhone.value; 
+// the unkown type in ts
+
+// the unkown type is better to be used than the any type as it forces
+// us the programmer to ensure that types are used properly
+
+type Book = string;
+
+function render(document: unknown) {
+  // Narrowing
+  if (typeof document === "string") document.toUpperCase();
+  // if (document instanceof Book)
+  //   document.
+}
+
+
+
+// the never type
+
+function reject(message: string): never {
+  throw new Error(message);
+}
+
+function processEvents(): never { // setting the return type to never
+  while (true) {
+    // read a message from a queue
+  }
+}
+
+reject('...');// code under this will not be executed becuase the return type is never
+console.log('Hello World!'); // this will never be executed
+console.log('hwhwh');
