@@ -93,3 +93,22 @@ let anotherEmployee: Employee = {
     console.log(date);
   },
 };
+
+/// union types
+
+function kgToLbs(wieght: number | string): number { // union type
+    // Narrowing
+    if (typeof wieght === 'number')
+        return wieght * 2.2;
+    else
+        return parseInt(wieght) * 2.2
+}
+
+// with the union type its good to check if argument is a number or a string 
+// so as to perform the right options
+
+kgToLbs(10);
+kgToLbs('10');
+
+
+
