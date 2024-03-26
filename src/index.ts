@@ -181,3 +181,15 @@ console.log(customer?.birthday.getFullYear());
 // optional call
 let log: any = null;
 log?.("a"); // executed only when log is referencing an actual function
+
+
+
+
+
+// the nullish coaelscing operator
+
+let speed: number | null = null;
+let ride = {
+  // falsy (undefined, null, '', false, 0)
+  speed: speed ?? 30, // if speed is not null or undefined, use the speed or else use the defual value: 30
+};
