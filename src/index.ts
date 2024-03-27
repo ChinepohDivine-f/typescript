@@ -362,8 +362,6 @@ class Teacher extends Person {
 let teacher = new Teacher("Nogd", "Sofamy");
 console.log(teacher.fullName);
 
-
-
 // polymorphism
 // meaning an object can take many forms
 
@@ -372,3 +370,9 @@ printNames([student, teacher]);
 function printNames(people: Person[]) {
   for (let person of people) console.log(person.fullName);
 }
+
+// protected members are like private methods but the difference is
+// they can be inherited
+// private methods cannot be inherited
+
+// used them when you really know what you are doing
