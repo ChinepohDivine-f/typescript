@@ -236,16 +236,20 @@ console.log("hwhwh");
 /// Classes and interfaces in type script
 
 class Account {
-  readonly id: number; // make the id readonly and cannot be modified
-  owner: string;
-  private _balance: number; // make private
+  // readonly id: number; // make the id readonly and cannot be modified
+  // owner: string;
+  // private _balance: number; // make private
   nickname?: string; // make optional as not every account should have a nickname
 
-  constructor(id: number, owner: string, balance: number) {
-    this.id = id;
-    this.owner = owner;
-    this._balance = balance;
-  }
+
+
+  // parameter properties. this is the shortest and best way to create constructors as it reduces
+  // amount of code to be written
+  constructor(
+    public readonly id: number,
+    public owner: string,
+    private _balance: number
+  ) {}
 
   deposit(amount: number): void {
     if (amount <= 0) throw new Error("Invalid Amount");
@@ -260,22 +264,19 @@ class Account {
   }
 }
 
-
-let account = new Account(1, 'Sam', 0);
+let account = new Account(1, "Sam", 0);
 
 account.deposit(100);
 // console.log(account.balance);
 console.log(account);
-console.log( account instanceof Account); // when dealing with custom object use the instanceof and not the type of
+console.log(account instanceof Account); // when dealing with custom object use the instanceof and not the type of
 // so as to get the class or the type specified for the oject. if we use typeof then js will on return 'object'
-
 
 // Union
 // if(type of someObj === ' number') {}
 
-
 // in js we have  various access control keywords
-// private, public, and protected can be asigned to an attribute to of a function 
+// private, public, and protected can be asigned to an attribute to of a function
 // to grant permissions on how the user can access it.
 
 // print balance to screen
