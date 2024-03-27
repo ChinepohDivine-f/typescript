@@ -241,8 +241,6 @@ class Account {
   // private _balance: number; // make private
   nickname?: string; // make optional as not every account should have a nickname
 
-
-
   // parameter properties. this is the shortest and best way to create constructors as it reduces
   // amount of code to be written
   constructor(
@@ -259,15 +257,24 @@ class Account {
   // define a method to get the balance because it is private
   // and cannot be logged directly
 
-  getBalance() {
+  get balance(): number {
+    // getter
     return this._balance;
+  }
+
+  set balance(value: number) {
+    // setter
+    if (value < 0) throw new Error("INvalid value");
+    this._balance = value;
+
+    // not that the getter and setter have thesame name
   }
 }
 
 let account = new Account(1, "Sam", 0);
 
 account.deposit(100);
-// console.log(account.balance);
+console.log(account.balance);
 console.log(account);
 console.log(account instanceof Account); // when dealing with custom object use the instanceof and not the type of
 // so as to get the class or the type specified for the oject. if we use typeof then js will on return 'object'
@@ -280,4 +287,4 @@ console.log(account instanceof Account); // when dealing with custom object use 
 // to grant permissions on how the user can access it.
 
 // print balance to screen
-console.log(account.getBalance());
+// console.log(account.getBalance());
