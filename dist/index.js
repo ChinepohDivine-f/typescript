@@ -109,4 +109,14 @@ account.deposit(100);
 console.log(account.balance);
 console.log(account);
 console.log(account instanceof Account);
+var SeatAssignment = (function () {
+    function SeatAssignment() {
+    }
+    return SeatAssignment;
+}());
+var seats = new SeatAssignment();
+seats.A1 = 'chinepoh';
+seats.A2 = 'Shalom';
+seats['A3'] = 'Sandra';
+console.log(seats);
 //# sourceMappingURL=index.js.map
