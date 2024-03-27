@@ -192,15 +192,15 @@ let ride = {
 
 // type assertion
 
-let phone = document.getElementById("phone") as HTMLInputElement; // assert the the HTMLInputElement
+/// let phone = document.getElementById("phone") as HTMLInputElement; // assert the the HTMLInputElement
 // HTMLElement
 // HTMLInputElement
-phone.value; // the phone object can now acces the properties of HTMLInputElement
+/// phone.value; // the phone object can now acces the properties of HTMLInputElement
 
 // there is not type convention when using the as keyword in ts
 
-let anotherPhone = <HTMLInputElement>document.getElementById("tablet"); // same as using the as keyword
-anotherPhone.value;
+///  let anotherPhone = <HTMLInputElement>document.getElementById("tablet"); // same as using the as keyword
+/// anotherPhone.value;
 
 // the unkown type in ts
 
@@ -229,7 +229,7 @@ function processEvents(): never {
   }
 }
 
-reject("..."); // code under this will not be executed becuase the return type is never
+// reject("..."); // code under this will not be executed becuase the return type is never
 console.log("Hello World!"); // this will never be executed
 console.log("hwhwh");
 
@@ -251,3 +251,16 @@ class Account {
     this.balance += amount;
   }
 }
+
+
+let account = new Account(1, 'Sam', 0);
+
+account.deposit(100);
+console.log(account.balance);
+console.log(account);
+console.log( account instanceof Account); // when dealing with custom object use the instanceof and not the type of
+// so as to get the class or the type specified for the oject. if we use typeof then js will on return 'object'
+
+
+// Union
+// if(type of someObj === ' number') {}

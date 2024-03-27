@@ -66,10 +66,6 @@ var speed = null;
 var ride = {
     speed: speed !== null && speed !== void 0 ? speed : 30,
 };
-var phone = document.getElementById("phone");
-phone.value;
-var anotherPhone = document.getElementById("tablet");
-anotherPhone.value;
 function render(document) {
     if (typeof document === "string")
         document.toUpperCase();
@@ -81,7 +77,6 @@ function processEvents() {
     while (true) {
     }
 }
-reject("...");
 console.log("Hello World!");
 console.log("hwhwh");
 var Account = (function () {
@@ -97,4 +92,9 @@ var Account = (function () {
     };
     return Account;
 }());
+var account = new Account(1, 'Sam', 0);
+account.deposit(100);
+console.log(account.balance);
+console.log(account);
+console.log(account instanceof Account);
 //# sourceMappingURL=index.js.map
