@@ -189,4 +189,20 @@ var Student = (function (_super) {
 }(Person));
 var student = new Student(1002, "Zango", "Neville");
 console.log(student);
+var Teacher = (function (_super) {
+    __extends(Teacher, _super);
+    function Teacher() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Object.defineProperty(Teacher.prototype, "fullName", {
+        get: function () {
+            return "Professor " + this.firstName + " " + this.lastName;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    return Teacher;
+}(Person));
+var teacher = new Teacher("Nogd", "Sofamy");
+console.log(teacher.fullName);
 //# sourceMappingURL=index.js.map

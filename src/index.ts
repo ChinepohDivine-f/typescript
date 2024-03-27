@@ -348,3 +348,15 @@ class Student extends Person {
 
 let student = new Student(1002, "Zango", "Neville");
 console.log(student);
+
+// overriding in ts
+// we can override functionality inherited from another class using the override keyword
+
+class Teacher extends Person {
+  override get fullName() {
+    return "Professor " + this.firstName + " " + this.lastName; // added the professor title to the full name
+  }
+}
+
+let teacher = new Teacher("Nogd", "Sofamy");
+console.log(teacher.fullName);
