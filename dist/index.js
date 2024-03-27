@@ -205,4 +205,10 @@ var Teacher = (function (_super) {
 }(Person));
 var teacher = new Teacher("Nogd", "Sofamy");
 console.log(teacher.fullName);
+function printNames(people) {
+    for (var _i = 0, people_1 = people; _i < people_1.length; _i++) {
+        var person = people_1[_i];
+        console.log(person.fullName);
+    }
+}
 //# sourceMappingURL=index.js.map

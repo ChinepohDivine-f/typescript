@@ -361,3 +361,14 @@ class Teacher extends Person {
 
 let teacher = new Teacher("Nogd", "Sofamy");
 console.log(teacher.fullName);
+
+
+
+// polymorphism
+// meaning an object can take many forms
+
+printNames([student, teacher]);
+
+function printNames(people: Person[]) {
+  for (let person of people) console.log(person.fullName);
+}
