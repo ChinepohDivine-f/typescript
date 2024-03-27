@@ -216,20 +216,38 @@ function render(document: unknown) {
   //   document.
 }
 
-
-
 // the never type
 
 function reject(message: string): never {
   throw new Error(message);
 }
 
-function processEvents(): never { // setting the return type to never
+function processEvents(): never {
+  // setting the return type to never
   while (true) {
     // read a message from a queue
   }
 }
 
-reject('...');// code under this will not be executed becuase the return type is never
-console.log('Hello World!'); // this will never be executed
-console.log('hwhwh');
+reject("..."); // code under this will not be executed becuase the return type is never
+console.log("Hello World!"); // this will never be executed
+console.log("hwhwh");
+
+/// Classes and interfaces in type script
+
+class Account {
+  id: number;
+  owner: string;
+  balance: number;
+
+  constructor(id: number, owner: string, balance: number) {
+    this.id = id;
+    this.owner = owner;
+    this.balance = balance;
+  }
+
+  deposit(amount: number): void {
+    if (amount <= 0) throw new Error("Invalid Amount");
+    this.balance += amount;
+  }
+}

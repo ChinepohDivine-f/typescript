@@ -66,12 +66,35 @@ var speed = null;
 var ride = {
     speed: speed !== null && speed !== void 0 ? speed : 30,
 };
-var phone = document.getElementById('phone');
+var phone = document.getElementById("phone");
 phone.value;
-var anotherPhone = document.getElementById('tablet');
+var anotherPhone = document.getElementById("tablet");
 anotherPhone.value;
 function render(document) {
-    if (typeof document === 'string')
+    if (typeof document === "string")
         document.toUpperCase();
 }
+function reject(message) {
+    throw new Error(message);
+}
+function processEvents() {
+    while (true) {
+    }
+}
+reject("...");
+console.log("Hello World!");
+console.log("hwhwh");
+var Account = (function () {
+    function Account(id, owner, balance) {
+        this.id = id;
+        this.owner = owner;
+        this.balance = balance;
+    }
+    Account.prototype.deposit = function (amount) {
+        if (amount <= 0)
+            throw new Error("Invalid Amount");
+        this.balance += amount;
+    };
+    return Account;
+}());
 //# sourceMappingURL=index.js.map
