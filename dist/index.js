@@ -83,18 +83,21 @@ var Account = (function () {
     function Account(id, owner, balance) {
         this.id = id;
         this.owner = owner;
-        this.balance = balance;
+        this._balance = balance;
     }
     Account.prototype.deposit = function (amount) {
         if (amount <= 0)
             throw new Error("Invalid Amount");
-        this.balance += amount;
+        this._balance += amount;
+    };
+    Account.prototype.getBalance = function () {
+        return this._balance;
     };
     return Account;
 }());
 var account = new Account(1, 'Sam', 0);
 account.deposit(100);
-console.log(account.balance);
 console.log(account);
 console.log(account instanceof Account);
+console.log(account.getBalance());
 //# sourceMappingURL=index.js.map
