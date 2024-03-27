@@ -354,7 +354,8 @@ console.log(student);
 
 class Teacher extends Person {
   override get fullName() {
-    return "Professor " + this.firstName + " " + this.lastName; // added the professor title to the full name
+    return "Professor " + this.firstName + " " + this.lastName;
+    // return "Professor " + super.fullName; // added the professor title to the full name
   }
 }
 
