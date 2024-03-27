@@ -289,18 +289,41 @@ console.log(account instanceof Account); // when dealing with custom object use 
 // print balance to screen
 // console.log(account.getBalance());
 
-
-
-
 // index signatures
 class SeatAssignment {
   // Index signature property
-  [seatNumber: string] : string // creates and array of seats
+  [seatNumber: string]: string; // creates and array of seats
 }
 
 let seats = new SeatAssignment();
-seats.A1 = 'chinepoh';
-seats.A2 = 'Shalom';
-seats['A3'] = 'Sandra';
+seats.A1 = "chinepoh";
+seats.A2 = "Shalom";
+seats["A3"] = "Sandra";
 
 console.log(seats);
+
+// static members
+class Rides {
+  private static _activeRides: number = 0;
+  start() {
+    Rides._activeRides++;
+  }
+  stop()
+  {
+    Rides._activeRides--;
+  }
+
+  get activeRides() {
+    return Rides._activeRides;
+  }
+
+  set activeRides(value: number) {
+    if (value < 0) throw new Error('Invalid value');
+    Rides._activeRides = value;
+  }
+
+}
+ 
+
+
+
