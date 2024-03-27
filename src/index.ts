@@ -236,9 +236,10 @@ console.log("hwhwh");
 /// Classes and interfaces in type script
 
 class Account {
-  id: number;
+  readonly id: number; // make the id readonly and cannot be modified
   owner: string;
   balance: number;
+  nickname?: string; // make optional as not every account should have a nickname
 
   constructor(id: number, owner: string, balance: number) {
     this.id = id;
