@@ -308,8 +308,7 @@ class Rides {
   start() {
     Rides._activeRides++;
   }
-  stop()
-  {
+  stop() {
     Rides._activeRides--;
   }
 
@@ -318,12 +317,34 @@ class Rides {
   }
 
   set activeRides(value: number) {
-    if (value < 0) throw new Error('Invalid value');
+    if (value < 0) throw new Error("Invalid value");
     Rides._activeRides = value;
   }
-
 }
- 
 
+// inheritance
+class Person {
+  constructor(public firstName: string, public lastName: string) {}
+  get fullName() {
+    return this.firstName + " " + this.lastName;
+  }
 
+  walk() {
+    console.log("Walk");
+  }
+}
 
+class Student extends Person {
+  // the method and attributes of Person have been inherited
+  constructor(public studentId: number, firstName: string, lastName: string) {
+    // we do not need to add the public keyword to the inherited attricutes
+    super(firstName, lastName);
+  }
+
+  takeTest() {
+    console.log("Taking a Test");
+  }
+}
+
+let student = new Student(1002, "Zango", "Neville");
+console.log(student);
