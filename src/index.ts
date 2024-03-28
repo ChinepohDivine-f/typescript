@@ -380,9 +380,10 @@ function printNames(people: Person[]) {
 // the abstract keyword can be used to state that a class is not yet ready for use
 // and should be extended. for example
 
-abstract class Shape { // we must extend this class in order to use it
+abstract class Shape {
+  // we must extend this class in order to use it
   constructor(public color: string) {}
-  abstract render(): void  // NB: abstract methods can only exist in abstract classes
+  abstract render(): void; // NB: abstract methods can only exist in abstract classes
 }
 
 class Circle extends Shape {
@@ -396,44 +397,42 @@ class Circle extends Shape {
   }
 }
 
-
-let circle = new Circle(5, 'purple');
+let circle = new Circle(5, "purple");
 circle.render();
 // let shape = new Shape()// we cannot do this because shape is an abstract class hence has no implimentation
 
-
-/// interfaces in ts 
+/// interfaces in ts
 
 class KeyVAluePair {
   constructor(public key: number, public value: string) {}
-} class StringKeyValuePair {
+}
+class StringKeyValuePair {
   constructor(public key: string, public value: string) {}
 }
 
-
-let pair = new KeyVAluePair(1, 'FAther')
+let pair = new KeyVAluePair(1, "FAther");
 
 // the code above is not good as it will lead to difficult to fix bugs
 // and long code
 
+// better version of the code
 
-// better version of the code 
-
-
-class AnotherKeyVAluePair<K, V> { // THE TYPE OF THE PARAMETER WILL DEPEND ONTHE ARGUMENTS
+class AnotherKeyVAluePair<K, V> {
+  // THE TYPE OF THE PARAMETER WILL DEPEND ONTHE ARGUMENTS
   constructor(public key: K, public value: V) {} // WE SET THE TYPES OF KEY AND VALUE TO K AND V RESPECTIVELY
-} 
+}
 
-let anotherPair = new AnotherKeyVAluePair<string, string>('shalom', 'divine');
-// if we dont use the < string, string> the type of the pair will be infered 
+let anotherPair = new AnotherKeyVAluePair<string, string>("shalom", "divine");
+// if we dont use the < string, string> the type of the pair will be infered
 // by the ts compiler so there's no need to have it set here
-
-
 
 // using generic functions
 
-function wrapInArray<T>(value: T) { // we set the type of value to what ever the user inputs
-  return [value];
+class ArrayUtils {
+  static wrapInArray<T>(value: T) {
+    // we set the type of value to what ever the user inputs
+    return [value];
+  }
 }
 
-let anotherNumber = wrapInArray(1);
+let anotherNumber = ArrayUtils.wrapInArray(1);

@@ -232,7 +232,7 @@ var Circle = (function (_super) {
     };
     return Circle;
 }(Shape));
-var circle = new Circle(5, 'purple');
+var circle = new Circle(5, "purple");
 circle.render();
 var KeyVAluePair = (function () {
     function KeyVAluePair(key, value) {
@@ -248,7 +248,7 @@ var StringKeyValuePair = (function () {
     }
     return StringKeyValuePair;
 }());
-var pair = new KeyVAluePair(1, 'FAther');
+var pair = new KeyVAluePair(1, "FAther");
 var AnotherKeyVAluePair = (function () {
     function AnotherKeyVAluePair(key, value) {
         this.key = key;
@@ -256,9 +256,14 @@ var AnotherKeyVAluePair = (function () {
     }
     return AnotherKeyVAluePair;
 }());
-var anotherPair = new AnotherKeyVAluePair('shalom', 'divine');
-function wrapInArray(value) {
-    return [value];
-}
-var anotherNumber = wrapInArray(1);
+var anotherPair = new AnotherKeyVAluePair("shalom", "divine");
+var ArrayUtils = (function () {
+    function ArrayUtils() {
+    }
+    ArrayUtils.wrapInArray = function (value) {
+        return [value];
+    };
+    return ArrayUtils;
+}());
+var anotherNumber = ArrayUtils.wrapInArray(1);
 //# sourceMappingURL=index.js.map
