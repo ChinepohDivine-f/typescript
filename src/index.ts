@@ -437,13 +437,11 @@ class ArrayUtils {
 
 let anotherNumber = ArrayUtils.wrapInArray(1);
 
-
-
 // callin api endPoints
 
 interface Result<T> {
-  data: T,
-  error: string | null
+  data: T | null;
+  error: string | null;
 }
 
 function fetch<T>(url: string): Result<T> {
@@ -458,15 +456,55 @@ interface Product {
   title: string;
 }
 
-let result = fetch<User>('url'); // here we fetch the "result of user"
-result.data.username = 'Sandra';
-
-
+let result = fetch<User>("url"); // here we fetch the "result of user"
+// console.log(result.data.username);
 
 // generic constraints
 
-function echo<T extends number | string>(value: T): T { // we can extend and interface, datatypes, classess, cutstom types
+function echo<T extends number | string>(value: T): T {
+  // we can extend and interface, datatypes, classess, cutstom types
   return value;
 }
 
 echo(1);
+
+// extending generic classes and inheritance
+
+interface Product {
+  name: string;
+  price: number;
+}
+
+class Store<T> {
+  protected _objects: T[] = []; // we set this protected so it can be inherited as private attriutes or methods cannot be inherited by other classes
+
+  add(obj: T): void {
+    this._objects.push(obj);
+  }
+}
+
+// let store = new Store<Product>();
+
+// we are passing on the generic type parameter
+class CompressibleStore<T> extends Store<T> {
+  // had to add the generic type T on the class and the parent as so that they will reference each other
+  compress() {}
+}
+
+// restricting the generic type parameter
+class SearchableStore<T extends { name: string }> extends Store<T> {
+  find(name: string): T | undefined {
+    return this._objects.find((obj) => obj.name === name);
+  }
+}
+
+// fix the generic type parameter
+class ProductStore extends Store<Product> {
+  // we do not need to add the generic type to the class
+  filterByCategory(catergory: string): Product[] {
+    return [];
+  }
+}
+
+let store = new CompressibleStore<Product>();
+store.compress();
