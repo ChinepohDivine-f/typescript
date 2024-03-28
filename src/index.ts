@@ -514,3 +514,26 @@ class ProductStore extends Store<Product> {
 
 let store = new CompressibleStore<Product>();
 store.compress();
+
+
+
+
+// type mapping 
+interface Product {
+  name: string;
+  price: number;
+}
+
+type ReadOnly<T> = {
+  // index signature
+  // keyof
+  [K in keyof Product]: Product[K]
+}
+
+let anotherProduct: ReadOnly<Product> = {
+  title: 'ddf',
+  name: 'a',
+  price: 1
+}
+
+////// 
