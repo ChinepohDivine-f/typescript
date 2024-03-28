@@ -463,3 +463,10 @@ result.data.username = 'Sandra';
 
 
 
+// generic constraints
+
+function echo<T extends number | string>(value: T): T { // we can extend and interface, datatypes, classess, cutstom types
+  return value;
+}
+
+echo(1);
