@@ -481,6 +481,12 @@ class Store<T> {
   add(obj: T): void {
     this._objects.push(obj);
   }
+
+  // if T is ProductStore
+  // the we can only pass name or price when we use the " keyof T"
+  find(property:  keyof T, value: unknown): T | undefined { // using the keyof we can ensure that we don not use properties that are not of a generic property
+    return this._objects.find((obj) => obj[property] === value);
+  }
 }
 
 // let store = new Store<Product>();
@@ -492,11 +498,11 @@ class CompressibleStore<T> extends Store<T> {
 }
 
 // restricting the generic type parameter
-class SearchableStore<T extends { name: string }> extends Store<T> {
-  find(name: string): T | undefined {
-    return this._objects.find((obj) => obj.name === name);
-  }
-}
+// class SearchableStore<T extends { name: string }> extends Store<T> {
+//   find(name: string): T | undefined {
+//     return this._objects.find((obj) => obj.name === name);
+//   }
+// }
 
 // fix the generic type parameter
 class ProductStore extends Store<Product> {
