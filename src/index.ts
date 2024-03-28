@@ -436,3 +436,30 @@ class ArrayUtils {
 }
 
 let anotherNumber = ArrayUtils.wrapInArray(1);
+
+
+
+// callin api endPoints
+
+interface Result<T> {
+  data: T,
+  error: string | null
+}
+
+function fetch<T>(url: string): Result<T> {
+  return { data: null, error: null };
+}
+
+interface User {
+  username: string;
+}
+
+interface Product {
+  title: string;
+}
+
+let result = fetch<User>('url'); // here we fetch the "result of user"
+result.data.username = 'Sandra';
+
+
+
