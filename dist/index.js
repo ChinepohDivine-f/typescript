@@ -205,10 +205,33 @@ var Teacher = (function (_super) {
 }(Person));
 var teacher = new Teacher("Nogd", "Sofamy");
 console.log(teacher.fullName);
+printNames([student, teacher]);
 function printNames(people) {
     for (var _i = 0, people_1 = people; _i < people_1.length; _i++) {
         var person = people_1[_i];
         console.log(person.fullName);
     }
 }
+var Shape = (function () {
+    function Shape(color) {
+        this.color = color;
+    }
+    return Shape;
+}());
+var Circle = (function (_super) {
+    __extends(Circle, _super);
+    function Circle(radius, color) {
+        var _this = _super.call(this, color) || this;
+        _this.radius = radius;
+        return _this;
+    }
+    Circle.prototype.render = function () {
+        {
+            console.log("Rendering a Circle");
+        }
+    };
+    return Circle;
+}(Shape));
+var circle = new Circle(5, 'purple');
+circle.render();
 //# sourceMappingURL=index.js.map

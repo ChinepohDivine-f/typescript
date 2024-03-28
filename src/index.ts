@@ -376,3 +376,44 @@ function printNames(people: Person[]) {
 // private methods cannot be inherited
 
 // used them when you really know what you are doing
+
+// the abstract keyword can be used to state that a class is not yet ready for use
+// and should be extended. for example
+
+abstract class Shape { // we must extend this class in order to use it
+  constructor(public color: string) {}
+  abstract render(): void  // NB: abstract methods can only exist in abstract classes
+}
+
+class Circle extends Shape {
+  constructor(public radius: number, color: string) {
+    super(color);
+  }
+  override render(): void {
+    {
+      console.log("Rendering a Circle");
+    }
+  }
+}
+
+
+let circle = new Circle(5, 'purple');
+circle.render();
+// let shape = new Shape()// we cannot do this because shape is an abstract class hence has no implimentation
+
+
+/// interfaces in ts 
+
+class KeyVAluePair {
+  constructor(public key: number, public value: string) {}
+} class StringKeyValuePair {
+  constructor(public key: string, public value: string) {}
+}
+
+
+let pair = new KeyVAluePair(1, 'FAther')
+
+// the code above is not good as it will lead to difficult to fix bugs
+// and long code
+
+
