@@ -427,3 +427,13 @@ class AnotherKeyVAluePair<K, V> { // THE TYPE OF THE PARAMETER WILL DEPEND ONTHE
 let anotherPair = new AnotherKeyVAluePair<string, string>('shalom', 'divine');
 // if we dont use the < string, string> the type of the pair will be infered 
 // by the ts compiler so there's no need to have it set here
+
+
+
+// using generic functions
+
+function wrapInArray<T>(value: T) { // we set the type of value to what ever the user inputs
+  return [value];
+}
+
+let anotherNumber = wrapInArray(1);

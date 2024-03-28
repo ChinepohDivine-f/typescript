@@ -234,4 +234,31 @@ var Circle = (function (_super) {
 }(Shape));
 var circle = new Circle(5, 'purple');
 circle.render();
+var KeyVAluePair = (function () {
+    function KeyVAluePair(key, value) {
+        this.key = key;
+        this.value = value;
+    }
+    return KeyVAluePair;
+}());
+var StringKeyValuePair = (function () {
+    function StringKeyValuePair(key, value) {
+        this.key = key;
+        this.value = value;
+    }
+    return StringKeyValuePair;
+}());
+var pair = new KeyVAluePair(1, 'FAther');
+var AnotherKeyVAluePair = (function () {
+    function AnotherKeyVAluePair(key, value) {
+        this.key = key;
+        this.value = value;
+    }
+    return AnotherKeyVAluePair;
+}());
+var anotherPair = new AnotherKeyVAluePair('shalom', 'divine');
+function wrapInArray(value) {
+    return [value];
+}
+var anotherNumber = wrapInArray(1);
 //# sourceMappingURL=index.js.map
