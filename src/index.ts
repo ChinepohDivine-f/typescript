@@ -417,3 +417,13 @@ let pair = new KeyVAluePair(1, 'FAther')
 // and long code
 
 
+// better version of the code 
+
+
+class AnotherKeyVAluePair<K, V> { // THE TYPE OF THE PARAMETER WILL DEPEND ONTHE ARGUMENTS
+  constructor(public key: K, public value: V) {} // WE SET THE TYPES OF KEY AND VALUE TO K AND V RESPECTIVELY
+} 
+
+let anotherPair = new AnotherKeyVAluePair<string, string>('shalom', 'divine');
+// if we dont use the < string, string> the type of the pair will be infered 
+// by the ts compiler so there's no need to have it set here
